@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Slider</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdf3f3;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider {
+            text-align: center;
+        }
+
+        img {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6b6b;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e25555;
+        }
+
+        .emoji {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="emoji">❤️This is my moon!🌹</div> <!-- Love, Kiss, and Rose emojis -->
+        <img id="photo" src="C:\Users\Sujal Rupani\OneDrive\Desktop\Rose\Photos\insha1.jpg" alt="Photo">
+        <br>
+        <button onclick="nextPhoto()">Next</button>
+    </div>
+
+    <script>
+        const photos = [
+            "C:\\Users\\Sujal Rupani\\OneDrive\\Desktop\\Rose\\Photos\\insha1.jpg",
+            "C:\\Users\\Sujal Rupani\\OneDrive\\Desktop\\Rose\\Photos\\insha2.jpg",
+            "C:\\Users\\Sujal Rupani\\OneDrive\\Desktop\\Rose\\Photos\\insha3.jpg"
+        ];
+
+        let currentPhotoIndex = 0;
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            document.getElementById("photo").src = photos[currentPhotoIndex];
+        }
+    </script>
+</body>
+</html>

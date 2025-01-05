@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rose</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #1e1e1e, #3c3c3c);
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .rose-container {
+            position: relative;
+            width: 200px;
+            height: 300px;
+        }
+        .rose {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, crimson 40%, darkred 90%);
+            border-radius: 50%;
+            animation: bloom 2s infinite ease-in-out;
+            margin: auto;
+            top: 0;
+        }
+        .petal {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: radial-gradient(circle, crimson 40%, darkred 90%);
+            border-radius: 50%;
+            transform-origin: bottom center;
+            animation: bloom 2s infinite ease-in-out;
+        }
+        .petal.one {
+            transform: rotate(30deg);
+            left: 10px;
+            top: 20px;
+        }
+        .petal.two {
+            transform: rotate(-30deg);
+            right: 10px;
+            top: 20px;
+        }
+        .petal.three {
+            transform: rotate(60deg);
+            left: 25px;
+            top: 50px;
+        }
+        .petal.four {
+            transform: rotate(-60deg);
+            right: 25px;
+            top: 50px;
+        }
+        .stem {
+            position: absolute;
+            width: 15px;
+            height: 180px;
+            background: linear-gradient(to bottom, #228b22, #006400);
+            bottom: 0;
+            left: 92.5px;
+        }
+        .leaf {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(circle, #228b22 40%, #006400 90%);
+            border-radius: 50%;
+            transform-origin: bottom center;
+            animation: sway 3s infinite ease-in-out;
+        }
+        .leaf.left {
+            left: 50px;
+            bottom: 60px;
+            transform: rotate(-40deg);
+        }
+        .leaf.right {
+            right: 50px;
+            bottom: 60px;
+            transform: rotate(40deg);
+        }
+        @keyframes bloom {
+            0% { transform: scale(0.6); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+        .link {
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: crimson;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .link:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>An Enhanced Rose for You!</h1>
+    <div class="rose-container">
+        <div class="rose"></div>
+        <div class="petal one"></div>
+        <div class="petal two"></div>
+        <div class="petal three"></div>
+        <div class="petal four"></div>
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+    </div>
+    <a href="moon.html" class="link">Click here for a surprise</a>
+</body>
+</html>
